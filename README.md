@@ -1,4 +1,5 @@
 # ZSTU_sqlDash 📊
+<img width="500" height="500" alt="favicon" src="https://github.com/user-attachments/assets/0a43c05c-c077-45a8-a82b-3bd27ba22dcc" />
 
 **ZSTU_sqlDash** to lekka, webowa aplikacja do zarządzania bazami danych SQL, inspirowana phpMyAdminem. Stworzona po to, żeby ułatwić życie i pozwolić na zarządzanie tabelami z poziomu przeglądarki – szybko, sprawnie i bez konieczności klepania wszystkiego z palca w terminalu.
 
