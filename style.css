@@ -1,0 +1,227 @@
+/* Ogólne ustawienia dla wszystkich stron */
+body {
+    background-color: #292929;
+    color: white;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Tahoma", "sans-serif";
+    margin: 20px;
+    line-height: 1.6;
+}
+
+h1, h2, h3, p {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Linki i przyciski powrotu */
+a {
+    color: #4da6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Stylowanie formularzy (index.php, add.php, edit.php, textarea) */
+select,
+input[type="text"],
+textarea,
+button {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 1px solid #444;
+    background-color: #3d3d3d;
+    color: white;
+    font-size: 14px;
+    font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "Tahoma", "sans-serif";
+}
+
+textarea {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    max-width: 600px;
+}
+
+select {
+    cursor: pointer;
+    min-width: 200px;
+}
+
+option {
+    background-color: #292929;
+    color: white;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4a4a4a;
+    transition: background 0.3s;
+    border: none;
+}
+
+button:hover {
+    background-color: #666;
+}
+
+/* Widok list (db_view.php) */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+li {
+    background: #333;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+    transition: transform 0.2s;
+    color: white;
+}
+
+li:hover {
+    transform: translateX(5px);
+    background: #3d3d3d;
+}
+
+/* Tabele (table_view.php) */
+.nav-buttons {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.nav-buttons #back-button {
+    background-color: #4a4a4a;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    transition: background 0.3s;
+}
+.nav-buttons #add-record {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: none;
+    transition: background 0.3s;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #333;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #797979;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background-color: #2d2d2d;
+}
+
+tr:hover {
+    background-color: #383838;
+}
+
+/* Przyciski akcji w tabeli i marginesy */
+form {
+    margin: 0;
+}
+
+button[type="submit"] {
+    margin: 5px;
+}
+
+/* Specyficzny kolor dla usuwania */
+button[style*="color:red;"],
+button[style*="color: red;"] {
+    background-color: #602d2d !important;
+    color: #ff9999 !important;
+}
+
+button[style*="color:red;"]:hover {
+    background-color: #803333 !important;
+}
+
+/* Wyśrodkowanie kontenerów na index.php */
+form[action="db_view.php"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pagination-container {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 15px;
+    background: #222;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+}
+
+/* Styl aktywnej strony - wymuszony */
+.pagination-container .active-page {
+    background-color: #4da6ff !important; 
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    font-weight: bold !important;
+    box-shadow: 0 0 10px rgba(77, 166, 255, 0.5);
+}
+
+.pagination-container::-webkit-scrollbar {
+    height: 4px;
+}
+
+.pagination-container::-webkit-scrollbar-thumb {
+    background: #4da6ff;
+    border-radius: 10px;
+}
+
+/* --- SIATKA KAFELKÓW (DB_VIEW.PHP) --- */
+.db-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.table-card {
+    background: #333;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.table-card:hover {
+    transform: translateY(-3px);
+    background-color: #3d3d3d;
+}
+/* Stylowanie formularza SQL (sql_query.php) */
+form#sql_form {
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+}
+form#sql_form.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
