@@ -50,9 +50,25 @@
 
     while ($row = mysqli_fetch_assoc($res)) {
         $field = $row['Field'];
+        $type = $row['Type'];
+
         if ($row['Extra'] !== 'auto_increment') {
             echo "<label>$field: </label>";
-            echo "<input type='text' name='data[$field]' required><br><br>";
+
+            // Sprawdzenie, czy pole to ENUM
+            if (preg_match('/^enum\((.*)\)$/', $type, $matches)) {
+                $enum_values = str_getcsv($matches[1], ',', "'");
+                
+                echo "<select name='data[$field]' required>";
+                foreach ($enum_values as $option) {
+                    $opt_val = htmlspecialchars($option);
+                    echo "<option value='$opt_val'>$opt_val</option>";
+                }
+                echo "</select><br><br>";
+            } else {
+                // Standardowy input tekstowy
+                echo "<input type='text' name='data[$field]' required><br><br>";
+            }
         }
     }
     echo "<button type='submit' name='submit_add' style='background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer;'>Dodaj rekord</button>";

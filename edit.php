@@ -52,8 +52,26 @@
         $name = $column['Field'];
         $val = htmlspecialchars($current_data[$name] ?? '');
         $readonly = ($column['Key'] == 'PRI') ? "readonly" : "";
+        $type = $column['Type'];
 
-        echo "$name: <input type='text' name='data[$name]' value='$val' $readonly><br><br>";
+        echo "<label>$name: </label>";
+
+        // Sprawdzenie, czy pole to ENUM
+        if (preg_match('/^enum\((.*)\)$/', $type, $matches) && empty($readonly)) {
+            // Czyszczenie apostrofów i podział na tablicę opcji
+            $enum_values = str_getcsv($matches[1], ',', "'");
+            
+            echo "<select name='data[$name]'>";
+            foreach ($enum_values as $option) {
+                $selected = ($option === $current_data[$name]) ? "selected" : "";
+                $opt_val = htmlspecialchars($option);
+                echo "<option value='$opt_val' $selected>$opt_val</option>";
+            }
+            echo "</select><br><br>";
+        } else {
+            // Standardowy input dla pozostałych typów danych
+            echo "<input type='text' name='data[$name]' value='$val' $readonly><br><br>";
+        }
     }
     echo "<button type='submit' name='update' style='background-color: #4CAF50; color: white; padding: 10px 20px; border: none; cursor: pointer;'>Zapisz zmiany</button></form>";
 
