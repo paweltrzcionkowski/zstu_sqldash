@@ -17,7 +17,7 @@
 
 ## 🚀 Jak tego użyć?
 
-1. Pobierz kod projektu (kliknij zielony przycisk **Code** -> **Download ZIP** go rozpakuj).
+1. Pobierz kod projektu (kliknij zielony przycisk **Code** -> **Download ZIP** następnie rozpakuj go).
 2. Wrzuć pliki na swój serwer lokalny lub produkcyjny (np. do katalogu `var/www/html` lub `htdocs`).
 3. Skonfiguruj połączenie z bazą w pliku konfiguracyjnym *(tutaj możesz dopisać nazwę pliku, np. config.php)*.
 4. Odpal aplikację w przeglądarce i zarządzaj bazami jak człowiek.# zstu_sqldash
